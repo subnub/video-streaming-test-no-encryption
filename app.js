@@ -79,7 +79,7 @@ app.get("/video/:uuid", async(req, res) => {
     })
 })
 
-app.get("*", (req, res) => {
+app.get("*", "192.241.138.205", (req, res) => {
 
     res.sendFile(path.join(publicPath,"index.html"))
 })
