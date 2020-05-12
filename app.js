@@ -50,6 +50,13 @@ app.get("/video/:uuid", async(req, res) => {
 
     res.writeHead(206, head);
 
+    req.on("close", () => {
+        console.log("Request closed...");
+        readStream.destroy();
+        readStream.removeAllListeners();
+        res.end();
+    })
+
     readStream.on("data", (data) => {
 
         //res.write(data);
