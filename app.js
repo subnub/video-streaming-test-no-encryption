@@ -89,6 +89,7 @@ app.get("/video/:uuid", async(req, res) => {
 
             console.log("Old Stream Destroying...");
             readStream.destroy();
+            res.end();
             console.log("Old Stream Destroyed");
                    
         } else {
