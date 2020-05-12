@@ -84,7 +84,7 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(publicPath,"index.html"))
 })
 
-app.listen(3000,"192.241.138.205", () => {
+app.listen(3000, () => {
     console.log("listening")
 });
 
