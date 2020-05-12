@@ -79,12 +79,12 @@ app.get("/video/:uuid", async(req, res) => {
     })
 })
 
-app.get("*", "192.241.138.205", (req, res) => {
+app.get("*", (req, res) => {
 
     res.sendFile(path.join(publicPath,"index.html"))
 })
 
-app.listen(3000, () => {
+app.listen(3000,"192.241.138.205", () => {
     console.log("listening")
 });
 
