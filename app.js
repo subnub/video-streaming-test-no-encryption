@@ -84,18 +84,18 @@ app.get("/video/:uuid", async(req, res) => {
 
     readStream.on("data", (data) => {
 
+        res.write(data);
+        // if (tempStorage[paramsUUID] !== currentUUID) {
 
-        if (tempStorage[paramsUUID] !== currentUUID) {
-
-            console.log("Old Stream Destroying...");
-            readStream.destroy();
-            res.end();
-            console.log("Old Stream Destroyed");
+        //     console.log("Old Stream Destroying...");
+        //     readStream.destroy();
+        //     res.end();
+        //     console.log("Old Stream Destroyed");
                    
-        } else {
+        // } else {
 
-            res.write(data);
-        }
+        //     res.write(data);
+        // }
     })
 
     readStream.on("close", () => {
