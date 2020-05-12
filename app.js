@@ -19,9 +19,9 @@ app.use(express.static(publicPath));
 app.get("/video/:uuid", async(req, res) => {
 
     const originalFileSize = await getFileSize("./bunny.mp4");
-    // const paramsUUID = req.params.uuid;
-    // const currentUUID = uuid.v4();
-    // tempStorage[paramsUUID] = currentUUID; 
+    const paramsUUID = req.params.uuid;
+    const currentUUID = uuid.v4();
+    tempStorage[paramsUUID] = currentUUID; 
 
     console.log("File Request");
 
